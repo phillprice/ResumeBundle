@@ -1,0 +1,35 @@
+PhillPrice\ResumeBundle\Entity\Education:
+    type: entity
+    table: education
+    repositoryClass: PhillPrice\ResumeBundle\Entity\EducationRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 100
+        qualification:
+            type: string
+            length: 100
+        start_date:
+            type: datetime
+        end_date:
+            type: datetime
+            nullable: true
+        description:
+            type: text
+        graduated:
+            type: boolean
+        url:
+            type: string
+            length: 100
+            nullable: true
+    manyToOne:
+        Place:
+            targetEntity: PhillPrice\ResumeBundle\Entity\Place
+            inveredBy: Experience
+            joinColumn:
+                name: place_id
+                referencedColumnName: id

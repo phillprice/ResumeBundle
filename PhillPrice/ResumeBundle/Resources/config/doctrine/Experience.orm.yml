@@ -1,0 +1,32 @@
+PhillPrice\ResumeBundle\Entity\Experience:
+    type: entity
+    table: experience
+    repositoryClass: PhillPrice\ResumeBundle\Entity\ExperienceRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        job_title:
+            type: string
+            length: 100
+        start_date:
+            type: datetime
+        end_date:
+            type: datetime
+            nullable: true
+        description:
+            type: text
+        current:
+            type: boolean
+        url:
+            type: string
+            length: 100
+            nullable: true
+    manyToOne:
+        Place:
+            targetEntity: PhillPrice\ResumeBundle\Entity\Place
+            inveredBy: Experience
+            joinColumn:
+                name: place_id
+                referencedColumnName: id

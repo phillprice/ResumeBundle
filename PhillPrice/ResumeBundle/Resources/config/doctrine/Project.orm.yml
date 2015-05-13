@@ -1,0 +1,17 @@
+PhillPrice\ResumeBundle\Entity\Project:
+    type: entity
+    table: project
+    repositoryClass: PhillPrice\ResumeBundle\Entity\ProjectRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 100
+        description:
+            type: text
+        url:
+            type: string
+            length: 100

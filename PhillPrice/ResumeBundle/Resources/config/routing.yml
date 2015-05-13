@@ -1,0 +1,9 @@
+experience_list:
+    path:      /experience/list
+    defaults:  { _controller: PhillPriceResumeBundle:Experience:list }
+education_list:
+    path:      /education/list
+    defaults:  { _controller: PhillPriceResumeBundle:Education:list }
+experience_detail:
+    path:      /experience/{$id}
+    defaults:  { _controller: PhillPriceResumeBundle:Experience:detail }

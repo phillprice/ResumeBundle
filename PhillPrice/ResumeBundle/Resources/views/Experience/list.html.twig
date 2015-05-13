@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Experience List{% endblock %}
+
+{% block body %}
+    {% for item in experiences %}
+	    <h2>{{ item.JobTitle }} at {{ item.place.name }}</h2>
+	    <p>Dates: {{ item.StartDate|date("F Y") }} to {% if item.Current %}Present{% else %}{{ item.EndDate|date("F Y") }}{% endif %}</p>
+	    <p>{{ item.Description}} </p>
+    {% endfor %}
+{% endblock %}

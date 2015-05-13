@@ -1,0 +1,41 @@
+PhillPrice\ResumeBundle\Entity\Place:
+    type: entity
+    table: place
+    repositoryClass: PhillPrice\ResumeBundle\Entity\PlaceRepository
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 100
+        description:
+            type: text
+        address:
+            type: string
+            length: 100
+        latitude:
+            type: decimal
+            scale: 2
+            nullable: true
+        longitude:
+            type: decimal
+            scale: 2
+            nullable: true
+        url:
+            type: string
+            length: 100
+    oneToMany:
+        experiences:
+            targetEntity: PhillPrice\ResumeBundle\Entity\Experience
+            mappedBy: Place
+            joinColumn:
+                name: id
+                referenedColumnName: place_id
+        educations:
+            targetEntity: PhillPrice\ResumeBundle\Entity\Education
+            mappedBy: Place
+            joinColumn:
+                name: id
+                referenedColumnName: place_id

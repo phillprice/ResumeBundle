@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Education List{% endblock %}
+
+{% block body %}
+    {% for item in educations %}
+	    <h2>{{ item.name }} at {{ item.place.name }}</h2>
+	    <p>Dates: {{ item.StartDate|date("F Y") }} to {% if item.Graduated %}{{ item.EndDate|date("F Y") }}{% else %}Present{% endif %}</p>
+	    <p>Grade: {{ item.Qualification }}</p>
+	   	<p>{{ item.Description}} </p>
+    {% endfor %}
+{% endblock %}
